@@ -3,8 +3,8 @@
             [reagent.core :as r]))
 
 (f/reg-event-db :init
-                (fn [db event-vector]
-                  db))
+                (fn [db [_ n]]
+                  (assoc db :the-number n)))
 
 (f/reg-event-db :go-up
                 (fn [db _]
@@ -17,7 +17,8 @@
 (f/reg-sub :the-number
            (fn [db] (get db :the-number)))
 
-(defn app []
+
+(defn counter-app []
   (r/with-let [the-number (f/subscribe [:the-number])
                _          (f/dispatch [:init 5])]
     [:div
@@ -27,5 +28,5 @@
       [:div
        "The number: " @the-number]]]))
 
-(r/render-component [app]
+(r/render-component [counter-app]
                     (.getElementById js/document "app"))
