@@ -1,13 +1,31 @@
 (ns forms.core
-  (:require [re-frame.core :as f]
+  (:require [forms.re-frame :as f]
             [reagent.core :as r]))
 
 (f/reg-event-db :init
                 (fn [db event-vector]
-                  (println "her er input til eventen" event-vector)))
+                  db))
 
+(f/reg-event-db :go-up
+                (fn [db _]
+                  (update db :the-number inc)))
 
-(r/render-component [:div "tjohei"]
+(f/reg-event-db :go-down
+                (fn [db _]
+                  (update db :the-number dec)))
+
+(f/reg-sub :the-number
+           (fn [db] (get db :the-number)))
+
+(defn app []
+  (r/with-let [the-number (f/subscribe [:the-number])
+               _          (f/dispatch [:init 5])]
+    [:div
+     [:button {:on-click #(f/dispatch [:go-up])} "-"]
+     [:button {:on-click #(f/dispatch [:go-down])} "+"]
+     [:div
+      [:div
+       "The number: " @the-number]]]))
+
+(r/render-component [app]
                     (.getElementById js/document "app"))
-
-(f/dispatch [:init (rand-int 200)])
