@@ -1,5 +1,5 @@
-(ns forms.counter
-  (:require [forms.re-frame :as f]
+(ns samples.counter
+  (:require [samples.re-frame :as f]
             [reagent.core :as r]))
 
 (f/reg-event-db :init
@@ -12,7 +12,7 @@
 
 (f/reg-event-db :go-down
                 (fn [db _]
-                  (update db :the-number dec)))
+                  (update db :the-number rand-int)))
 
 (f/reg-sub :the-number
            (fn [db] (get db :the-number)))

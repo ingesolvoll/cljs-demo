@@ -15,5 +15,5 @@
                [com.bhauman/rebel-readline-cljs "0.1.4"]]}}
 
   :aliases {"fig"      ["trampoline" "run" "-m" "figwheel.main"]
-            "fig:prod" ["trampoline" "run" "-m" "figwheel.main" "-O" "advanced" "-b" "forms" "-s"]
-            "fig:dev"  ["trampoline" "run" "-m" "figwheel.main" "-b" "forms" "-r"]})
+            "fig:prod" ["trampoline" "run" "-m" "figwheel.main" "-O" "advanced" "-b" "samples" "-s"]
+            "fig:dev"  ["trampoline" "run" "-m" "figwheel.main" "-b" "samples" "-r"]})

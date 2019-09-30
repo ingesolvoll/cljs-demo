@@ -1,14 +1,14 @@
-(ns ^:figwheel-hooks forms.core
+(ns ^:figwheel-hooks samples.core
   (:require [re-frame.core :as rf]
-            [forms.counter :as counter]
-            [forms.multiplication :as multiplication]
+            [samples.counter :as counter]
+            [samples.multiplication :as multiplication]
             [reagent.core :as r]))
 
 (enable-console-print!)
 
 (defn ^:after-load render []
   (rf/clear-subscription-cache!)
-  (r/render-component [multiplication/app]
+  (r/render-component [counter/app]
                       (.getElementById js/document "app")))
 
 (render)

@@ -1,4 +1,4 @@
-(ns forms.re-frame
+(ns samples.re-frame
   (:require [re-frame.core :as f]))
 
 ;; This namespace is used for any shared overrides we want on re-frame

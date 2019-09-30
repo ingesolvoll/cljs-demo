@@ -1,4 +1,4 @@
-(ns forms.multiplication)
+(ns samples.multiplication)
 
 (defn app []
   [:table
