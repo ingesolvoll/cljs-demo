@@ -1,6 +1,7 @@
 (ns ^:figwheel-hooks samples.core
   (:require [re-frame.core :as rf]
             [samples.counter :as counter]
+            [samples.forms :as forms]
             [samples.multiplication :as multiplication]
             [reagent.core :as r]))
 

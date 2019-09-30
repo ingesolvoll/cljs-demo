@@ -13,3 +13,7 @@ table, td {
   border-collapse: collapse;
   padding: 10px;
 }
+
+.sample-form {
+  margin: 40px;
+}
