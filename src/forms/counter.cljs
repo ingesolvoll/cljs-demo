@@ -17,13 +17,11 @@
 (f/reg-sub :the-number
            (fn [db] (get db :the-number)))
 
-
-(defn counter-app []
+(defn app []
   (r/with-let [the-number (f/subscribe [:the-number])
                _          (f/dispatch [:init 5])]
-    [:div
+    [:div {:class "buttons-container"}
      [:button {:on-click #(f/dispatch [:go-up])} "-"]
      [:button {:on-click #(f/dispatch [:go-down])} "+"]
      [:div
-      [:div
-       "The number: " @the-number]]]))
+      @the-number]]))

@@ -1,0 +1,15 @@
+.buttons-container {
+  border-radius: 5;
+  border: 1px solid grey;
+  margin: 50px;
+  padding: 50px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
