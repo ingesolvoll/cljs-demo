@@ -6,7 +6,7 @@
   (= username "gyldig@epost.no"))
 
 (defn valid-password? [password]
-  (= password "ab13ba524"))
+  (= password "abc13cba524"))
 
 (defn app []
   [:form {:class "sample-form"}
