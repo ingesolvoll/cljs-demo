@@ -7,7 +7,8 @@
   (is (= 1 2))
 
   (is (= []
-         (filter even? [1 2 3])))
+         (filter even? [1 2 3])
+         (filter odd? [1 2 3])))
 
   (is (= [1 2 3] (map inc [1 2 3])))
 
