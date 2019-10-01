@@ -2,6 +2,12 @@
   (:require [samples.re-frame :as f]
             [reagent.core :as r]))
 
+(defn valid-username? [username]
+  (= username "gyldig@epost.no"))
+
+(defn valid-password? [password]
+  (= password "ab13ba524"))
+
 (defn app []
   [:form {:class "sample-form"}
    [:div.form-group
